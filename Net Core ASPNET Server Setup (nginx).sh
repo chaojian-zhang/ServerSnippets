@@ -1,3 +1,9 @@
+# Add those folders to VS Code Workspace
+# /root
+# /var/www
+# /etc/nginx
+# /var/log/nginx
+
 # Assum root
 cd /root
 
@@ -7,6 +13,7 @@ cd /root
 
 # Start tmux session
 tmux new -s background
+tmux a -t background
 # ctrl+b %: Split
 # ctrl+b d: Detach
 # ctrl+b o: Swap pane
@@ -15,11 +22,5 @@ tmux new -s background
 # Initialize repo
 git clone https://github.com/chaojian-zhang/ServerSnippets.git
 chmod -R 777 /root/ServerSnippets
-
-# SSL
-sudo snap install core
-sudo snap refresh core
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-sudo certbot certonly --standalone
-# Running HTTPS requires NGINX for easier certificate management, otherwise configure Kestrel to use HTTPS is hard.
+# Clean up
+# ./git_clean.sh
